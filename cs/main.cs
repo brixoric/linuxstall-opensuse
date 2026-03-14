@@ -6,7 +6,7 @@ namespace GUIApp
     {
         static void Main(string[] args)
         {
-            // placeholder
+            // TODO: Add .NET Windows Forms code to make a installer GUI.
         }
     }
 }
