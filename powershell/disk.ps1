@@ -28,7 +28,7 @@ Format-Volume -DriveLetter $driveLetter -FileSystem FAT32 -Force -Confirm:$false
 start "$PSScriptRoot\..\rust\main.exe"
 
 # Copy the 'prep' folder to the EFI partition
-$prepFolder = "$PSScriptRoot\..\rust\prep"
+$prepFolder = "$PSScriptRoot\..\prepfs\prep"
 $targetPath = "$driveLetter:\prep"
 
 if (-not (Test-Path $prepFolder)) {
