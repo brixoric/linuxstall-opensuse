@@ -1,13 +1,13 @@
 # SimpleLinux (openSUSE)
-Windows program that installs openSUSE without the user having to boot into an installation USB. All user files are transferred over
+Windows program that installs openSUSE without the user having to boot into an installation USB. All user files are transferred over.
+
+## READ!
+You are required to read the legal disclaimer at [DISCLAIMER.md](DISCLAIMER.md) and agree to the terms before using this program.
 
 ## Requirements
 * 15GB storage free
 * Windows ESP not mounted (normally isn't)
 * SATA drive (NVMe support coming in another branch or soon)
-
-## Disclaimer!!!!!
-WIP
 
 ## How it works
 Main installation program (C#): Prepares and runs script
