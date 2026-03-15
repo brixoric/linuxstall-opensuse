@@ -24,6 +24,9 @@ if ($vol) {
 # Format the partition as FAT32
 Format-Volume -DriveLetter $driveLetter -FileSystem FAT32 -Force -Confirm:$false
 
+# Run the Rust applet to get targz and chrome data
+start "$PSScriptRoot\..\rust\main.exe"
+
 # Copy the 'prep' folder to the EFI partition
 $prepFolder = "$PSScriptRoot\..\rust\prep"
 $targetPath = "$driveLetter:\prep"
@@ -35,7 +38,7 @@ if (-not (Test-Path $prepFolder)) {
 
 Copy-Item -Path $prepFolder -Destination $targetPath -Recurse -Force
 
-Write-Host "Filesystem prep done."
+Write-Host "Copied prep/"
 
 # TODO:
 # Resize Windows partition to leave 15GB and flash image to the remaining space.
