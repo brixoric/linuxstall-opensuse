@@ -91,6 +91,8 @@ try {
     exit 1
 }
 
+start $PSScriptRoot\..\imgflash\main.exe
+
 # System should boot into the Linux ESP, which then boots up as normal but starts post.sh when the user logs in as root.
 #
 # Linux system mounts:
