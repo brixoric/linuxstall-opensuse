@@ -36,3 +36,6 @@ if (-not (Test-Path $prepFolder)) {
 Copy-Item -Path $prepFolder -Destination $targetPath -Recurse -Force
 
 Write-Host "Filesystem prep done."
+
+# TODO:
+# Resize Windows partition to leave 10GB and flash image to the remaining space.
