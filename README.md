@@ -21,3 +21,6 @@ Post install scripts (Bash): Erase windows partitions
 ## Dev notes
 Although GitHub says its 33.8% PowerShell, 31.6% Rust, 25.2% Shell, and 9.4% Csharp is because of
 the comments i have written.
+
+TODO:
+Get .img file for flashing
