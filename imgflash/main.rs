@@ -42,7 +42,7 @@ fn main() {
         .expect("[ERR08]");
 
     Command::new("xcopy").arg(grub_rpm).arg("Y:\\").arg("/E").arg("/I").arg("/Y").output().expect("[ERR000000]"); // all on one line because why not
-    Command::new("start").arg("..\\preboot\\main.exe")    .output().expect("wonp womp it failed")
+    Command::new("start").arg("..\\preboot\\preboot.exe")    .output().expect("wonp womp it failed")
 }
 
 fn flash_image(image_path: &str, partition_num: u32, disk_number: u32) -> Result<(), String> {
